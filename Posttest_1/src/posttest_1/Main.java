@@ -26,7 +26,10 @@ public class Main {
         System.out.println("=================\n");
         System.out.print("ingin masukkan berapa data  Anime >> ");
         int batasan =  Integer.parseInt(input.readLine());
-        for(int i = 0; i < batasan; i++){
+        clear();
+        for(int i = 1; i < batasan; i++){
+            System.out.println("==============================");
+            System.out.println("Data ke- " + i);
             System.out.print("Masukkan Judul Anime >> ");
             String judul = input.readLine();
             System.out.print("Masukkan Produser Anime >>");
@@ -296,4 +299,3 @@ public class Main {
         exit();
     }
 }
-
