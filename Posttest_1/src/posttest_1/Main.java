@@ -1,3 +1,5 @@
+// Nama : FILIPUS MANIK
+// NIM : 2109106096
 package posttest_1;
 import java.io.*;
 import java.util.*;
