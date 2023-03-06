@@ -1,2 +1,2 @@
-Nama : filipus adriel Manik
+NAMA : FILIPUS ADRIEL MANIK
 NIM : 2109106096
