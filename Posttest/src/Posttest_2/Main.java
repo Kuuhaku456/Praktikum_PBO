@@ -1,14 +1,6 @@
 package Posttest_2;
 import java.io.*;
 import java.util.*;
-
-import java.io.BufferedReader;
-import java.io.Console;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Main {
     private int batasan;
     private static InputStreamReader p = new InputStreamReader(System.in);
@@ -25,8 +17,8 @@ public class Main {
     }
     public static void main(String[] args) throws NumberFormatException, IOException{
         DataAnime.add(new Anime("Naruto", 2006, "pierrot", "Aniplex", 500));
-        DataAnime.add(new Anime("Bleach", 2007, "pierrot", "Aniplex", 387));
-        DataAnime.add(new Anime("Fairy tale", 2011, "Madhouse", "TOHO animation", 230));
+        DataAnime.add(new Anime("Bleach", 2007, "pierrot", "Aniplex", 500));
+        DataAnime.add(new Anime("Fairy tale", 2011, "Madhouse", "TOHO animation", 500));
         menu_login();
     }
     private static void nambah_data()throws NumberFormatException, IOException{
@@ -102,41 +94,45 @@ public class Main {
                 System.out.printf("|\t%-20s   ", anime.getproduser());
                 System.out.printf("|\t%-20s   |", anime.getEpisode());
                 System.out.println("\n");
-                System.out.println("\t1. UBAH  JUDUL");
-                System.out.println("\t2. UBAH  STUDIO");
-                System.out.println("\t3. UBAH  TAHUN RILIS");
-                System.out.println("\t4. UBAH  PRODUSER ");
-                System.out.println("\t5. UBAH  JUMLAH EPISODE");
-                System.out.print("Masukkan Pilihan Anda >> ");
-                int pilihan = Integer.parseInt(input.readLine());
-                switch(pilihan){
-                    case 1:
-                        System.out.print("Masukkan judul baru >> "); 
-                        anime.SetJudul(input.readLine());
-                        break;
-                    case 2:
-                        System.out.print("Masukkan Studio baru >> ");
-                        anime.setStudio(input.readLine());
-                        break;
-                    case 3:
-                        System.out.print("Masukkan Tahun Rilis Baru >> ");
-                        anime.setTahun(error_int());
-                        break;
-                    case 4:
-                        System.out.print("Masukkan Nama produser Baru >> ");
-                        anime.setProduser(input.readLine());
-                        break;
-                    case 5:
-                        System.out.print("Masukkan Jumlah Episode Baru >> ");
-                        anime.setjumlah_episode(error_int());
-                        break;
-                    default:
-                        System.err.println("==========================");
-                        System.err.println("Pilihan tidak ada Tuan >_<");
-                        System.err.println("==========================");
-                        break;
+                boolean lanjut = true;
+                while(lanjut){
+                    System.out.println("1. UBAH  JUDUL");
+                    System.out.println("2. UBAH  STUDIO");
+                    System.out.println("3. UBAH  TAHUN RILIS");
+                    System.out.println("4. UBAH  PRODUSER");
+                    System.out.println("5. UBAH  JUMLAH EPISODE");
+                    System.out.print("Masukkan Pilihan Anda >> ");
+                    int pilihan = Integer.parseInt(input.readLine());
+                    switch(pilihan){
+                        case 1:
+                            System.out.print("Masukkan judul baru >> "); 
+                            anime.SetJudul(input.readLine());
+                            break;
+                        case 2:
+                            System.out.print("Masukkan Studio baru >> ");
+                            anime.setStudio(input.readLine());
+                            break;
+                        case 3:
+                            System.out.print("Masukkan Tahun Rilis Baru >> ");
+                            anime.setTahun(error_int());
+                            break;
+                        case 4:
+                            System.out.print("Masukkan Nama produser Baru >> ");
+                            anime.setProduser(input.readLine());
+                            break;
+                        case 5:
+                            System.out.print("Masukkan Jumlah Episode Baru >> ");
+                            anime.setjumlah_episode(error_int());
+                            break;
+                        default:
+                            System.err.println("==========================");
+                            System.err.println("Pilihan tidak ada Tuan >_<");
+                            System.err.println("==========================");
+                            break;
+                        
+                    }
+                    lanjut = ulang("Ada lagi yang mau dirubah ");
                 }
-                break;
             }
         }
     }
@@ -225,6 +221,7 @@ public class Main {
         }
         
     }
+    
     private static void daftar() throws IOException{
         clear();
         System.out.println("=============================");
@@ -322,4 +319,6 @@ public class Main {
         exit();
     }
 }
+
+
 
